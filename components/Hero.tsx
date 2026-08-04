@@ -1,57 +1,76 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-indigo-500/20 rounded-full blur-[100px]" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px]" />
-
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
+    <div className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden py-28 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="z-10 max-w-4xl space-y-6"
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="relative z-10 mx-auto max-w-4xl space-y-8"
       >
-        <span className="inline-block px-3 py-1 text-sm font-medium text-cyan-400 bg-cyan-900/10 border border-cyan-800/50 rounded-full mb-4">
-          Available for work
-        </span>
-        
-        <h1 className="text-6xl md:text-8xl font-bold tracking-tight font-outfit text-white">
-          Building <br />
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 via-cyan-400 to-emerald-400 animate-gradient">
-            Digital Experiences
+        <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/4 px-4 py-1.5 backdrop-blur-md">
+          <span className="availability-dot" />
+          <span className="text-sm font-medium text-teal-200/90">
+            Available for opportunities
           </span>
-        </h1>
-        
-        <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-          Mình là <strong className="text-slate-200">Nguyen Van A</strong>, một Frontend Developer tập trung vào việc tạo ra các giao diện web mượt mà, tối ưu hiệu năng và trải nghiệm người dùng tuyệt vời.
-        </p>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
+        </div>
+
+        <div className="space-y-5">
+          <p className="font-display text-sm font-medium tracking-[0.2em] text-slate-400 uppercase">
+            Huynh Hoai Nam · Fullstack Developer
+          </p>
+
+          <h1 className="font-display text-5xl leading-[1.05] font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            End-to-end
+            <br />
+            <span className="gradient-text">products that scale</span>
+          </h1>
+
+          <p className="mx-auto max-w-2xl text-base leading-relaxed font-light text-slate-400 md:text-lg">
+            I build fullstack products — from UI React/Next.js to API Spring
+            Boot &amp; Go, data MySQL and AWS infrastructure.
+          </p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="flex gap-4 justify-center mt-8"
+          transition={{ delay: 0.25, duration: 0.55 }}
+          className="flex flex-wrap items-center justify-center gap-3 pt-2"
         >
-          <Link 
-            href="#projects" 
-            className="group relative px-8 py-3 bg-white text-slate-900 rounded-full font-semibold transition-all hover:scale-105 active:scale-95"
+          <Link
+            href="#projects"
+            data-cursor="hover"
+            className="magnetic-button rounded-full bg-white px-7 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_40px_rgba(45,212,191,0.15)]"
           >
-            View Projects
-            <span className="absolute inset-0 rounded-full ring-2 ring-white/50 group-hover:ring-4 transition-all"></span>
+            View projects
           </Link>
-          <Link 
-            href="#contact" 
-            className="px-8 py-3 bg-slate-800/50 hover:bg-slate-800 text-white border border-white/10 rounded-full font-medium transition-all hover:scale-105"
+          <Link
+            href="#contact"
+            data-cursor="hover"
+            className="magnetic-button rounded-full border border-white/12 bg-white/3 px-7 py-3 text-sm font-medium text-slate-200 backdrop-blur-sm hover:border-teal-400/30 hover:bg-white/6"
           >
-            Contact Me
+            Contact
           </Link>
         </motion.div>
       </motion.div>
-    </section>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
+      >
+        <span className="text-[10px] tracking-[0.2em] text-slate-500 uppercase">
+          Scroll
+        </span>
+        <span className="h-8 w-px bg-linear-to-b from-teal-400/60 to-transparent" />
+      </motion.div>
+    </div>
   );
 };
 

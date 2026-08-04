@@ -1,3 +1,4 @@
+import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/components/ScrollToTop";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
@@ -18,6 +19,8 @@ const sections = [
 export default function Home() {
   return (
     <main className="portfolio-shell relative min-h-screen overflow-hidden text-slate-100">
+      <CustomCursor />
+
       <div className="background-layers" aria-hidden="true">
         <div className="mesh-layer">
           <span />

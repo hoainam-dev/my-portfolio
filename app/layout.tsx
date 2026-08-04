@@ -15,22 +15,26 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Huynh Hoai Nam | Creative Frontend Developer",
+  title: "Huynh Hoai Nam | Fullstack Developer",
   description:
-    "Portfolio của Huynh Hoai Nam - Frontend Developer chuyên xây dựng trải nghiệm web hiện đại, mượt mà và giàu tương tác.",
+    "Portfolio của Huynh Hoai Nam — Fullstack Developer: React/Next.js, Java Spring Boot, Golang, MySQL và AWS.",
   keywords: [
     "Huynh Hoai Nam",
-    "Frontend Developer",
-    "Next.js Developer",
-    "React Developer",
+    "Fullstack Developer",
+    "Spring Boot",
+    "Golang",
+    "Next.js",
+    "React",
+    "AWS",
+    "MySQL",
     "Portfolio",
   ],
   authors: [{ name: "Huynh Hoai Nam" }],
   creator: "Huynh Hoai Nam",
   openGraph: {
-    title: "Huynh Hoai Nam | Creative Frontend Developer",
+    title: "Huynh Hoai Nam | Fullstack Developer",
     description:
-      "Frontend portfolio với các dự án web hiện đại, animation mượt và giao diện chuyên nghiệp.",
+      "Fullstack portfolio — frontend hiện đại và backend vững với Spring Boot, Go, MySQL, AWS.",
     type: "website",
     locale: "vi_VN",
   },

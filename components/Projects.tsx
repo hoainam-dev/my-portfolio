@@ -1,89 +1,139 @@
 "use client";
+
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
 
 const projects = [
   {
     title: "SaaS Dashboard Pro",
-    description: "Hệ thống quản lý dữ liệu doanh nghiệp với Next.js 14, tích hợp biểu đồ Recharts và chế độ Dark Mode tự động.",
+    description:
+      "A business data management system with Next.js, realtime charts, and automatic dark mode following system.",
     tags: ["Next.js", "TypeScript", "Tailwind", "Supabase"],
     github: "#",
     demo: "#",
-    gradient: "from-blue-600 to-indigo-600"
+    accent: "from-cyan-500/80 to-teal-600/80",
+    year: "2025",
   },
   {
     title: "Travel Booking App",
-    description: "Nền tảng đặt vé du lịch với trải nghiệm đặt phòng mượt mà, tích hợp thanh toán Stripe và bản đồ tương tác.",
+    description:
+      "A travel booking platform with smooth booking flow, Stripe payments, and interactive map.",
     tags: ["React", "Redux", "Framer Motion", "Mapbox"],
     github: "#",
     demo: "#",
-    gradient: "from-emerald-500 to-teal-500"
+    accent: "from-emerald-500/80 to-teal-700/80",
+    year: "2025",
   },
   {
     title: "AI Chat Interface",
-    description: "Giao diện chat AI hiện đại, hỗ trợ stream response, markdown rendering và lưu lịch sử chat local.",
-    tags: ["Next.js", "OpenAI API", "Zustand", "Radix UI"],
+    description:
+      "A modern AI chat interface — streaming response, markdown rendering, and local history.",
+    tags: ["Next.js", "OpenAI", "Zustand", "Radix UI"],
     github: "#",
     demo: "#",
-    gradient: "from-orange-500 to-pink-500"
+    accent: "from-sky-500/80 to-cyan-700/80",
+    year: "2024",
   },
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 px-4">
-      <div className="max-w-6xl mx-auto">
-        <motion.div 
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold font-outfit text-white mb-4">Featured Projects</h2>
-          <p className="text-slate-400">Một số dự án tiêu biểu mình đã thực hiện</p>
-        </motion.div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative bg-slate-900/50 border border-white/5 rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10"
-            >
-              {/* Fake Thumbnail */}
-              <div className={`h-48 w-full bg-linear-to-br ${project.gradient} relative overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
-                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
-              </div>
-              
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-white font-outfit group-hover:text-indigo-400 transition-colors">{project.title}</h3>
-                    <div className="flex gap-3">
-                        <a href={project.github} className="text-slate-400 hover:text-white transition-colors" title="View Code"><FaGithub size={20}/></a>
-                        <a href={project.demo} className="text-slate-400 hover:text-white transition-colors" title="Live Demo"><FaExternalLinkAlt size={18}/></a>
-                    </div>
-                </div>
-                
-                <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="px-3 py-1 text-xs font-medium text-indigo-300 bg-indigo-500/10 rounded-full border border-indigo-500/20">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+    <div className="relative">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6 }}
+        className="mb-14 space-y-4"
+      >
+        <span className="section-label">Projects</span>
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-5xl">
+            Selected work
+          </h2>
+          <p className="max-w-sm text-slate-400">
+            A few representative projects
+          </p>
         </div>
+      </motion.div>
+
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project, index) => (
+          <motion.article
+            key={project.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.08, duration: 0.5 }}
+            data-cursor="hover"
+            className="glass-card group flex flex-col overflow-hidden rounded-2xl"
+          >
+            <div
+              className={`relative h-44 overflow-hidden bg-linear-to-br ${project.accent}`}
+            >
+              <div
+                className="absolute inset-0 opacity-40"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
+                  backgroundSize: "24px 24px",
+                }}
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-[#0a1018] via-transparent to-transparent opacity-80" />
+              <div className="absolute right-4 bottom-4 left-4 flex items-center justify-between">
+                <span className="text-xs font-medium tracking-wider text-white/70">
+                  {project.year}
+                </span>
+                <FaArrowRight className="text-white/50 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
+              </div>
+            </div>
+
+            <div className="flex flex-1 flex-col p-5 md:p-6">
+              <div className="mb-3 flex items-start justify-between gap-3">
+                <h3 className="font-display text-xl font-bold text-white transition-colors group-hover:text-teal-200">
+                  {project.title}
+                </h3>
+                <div className="flex shrink-0 gap-2.5 pt-1">
+                  <a
+                    href={project.github}
+                    data-cursor="hover"
+                    className="text-slate-500 transition-colors hover:text-white"
+                    title="View Code"
+                    aria-label={`${project.title} GitHub`}
+                  >
+                    <FaGithub size={18} />
+                  </a>
+                  <a
+                    href={project.demo}
+                    data-cursor="hover"
+                    className="text-slate-500 transition-colors hover:text-white"
+                    title="Live Demo"
+                    aria-label={`${project.title} demo`}
+                  >
+                    <FaExternalLinkAlt size={15} />
+                  </a>
+                </div>
+              </div>
+
+              <p className="mb-5 flex-1 text-sm leading-relaxed text-slate-400">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-teal-400/15 bg-teal-400/5 px-2.5 py-1 text-[11px] font-medium text-teal-200/80"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.article>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
