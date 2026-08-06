@@ -31,9 +31,7 @@ export function ScrollToTop({ isDarkMode, language }: ScrollToTopProps) {
       title={language === "vi" ? "Cuộn lên đầu trang" : "Scroll to top"}
       className={cn(
         "fixed right-5 bottom-5 z-40 flex h-11 w-11 items-center justify-center rounded-full border shadow-lg transition-all duration-300 sm:right-6 sm:bottom-6",
-        visible
-          ? "translate-y-0 opacity-100"
-          : "pointer-events-none translate-y-3 opacity-0",
+        visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0",
         isDarkMode
           ? "border-slate-700 bg-slate-800 text-slate-100 hover:bg-slate-700"
           : "border-slate-200 bg-white text-slate-800 hover:bg-slate-50",

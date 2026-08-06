@@ -15,7 +15,7 @@ export const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
   language,
 }) => {
   return (
-    <section id="experience" className="relative overflow-x-clip py-20">
+    <section id="experience" className="relative py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
@@ -48,7 +48,7 @@ export const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
           {/* Vertical Center/Left Line */}
           <div
             className={cn(
-              "absolute top-0 bottom-0 left-4 w-0.5 -translate-x-1/2",
+              "absolute top-0 bottom-0 left-4 w-0.5 -translate-x-1/2 md:left-1/2",
               isDarkMode ? "bg-slate-800" : "bg-slate-200",
             )}
           />
@@ -151,7 +151,7 @@ export const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
                       {/* Tech Badges */}
                       <div
                         className={cn(
-                          "flex flex-wrap gap-1.5 border-t",
+                          "flex flex-wrap gap-1.5 border-t pt-2",
                           isDarkMode ? "border-slate-700/50" : "border-slate-200/50",
                         )}
                       >

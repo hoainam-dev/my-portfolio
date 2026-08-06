@@ -80,7 +80,7 @@ const ProjectModalContent: React.FC<ProjectModalProps & { project: Project }> = 
         </div>
 
         {/* Modal Body Scroll Container */}
-        <div className="max-h-[80vh] space-y-8 overflow-y-auto p-6">
+        <div className="max-h-[75vh] space-y-8 overflow-y-auto p-6">
           {/* Main Visual Image / Sandbox Preview Switch */}
           <div>
             <div className="mb-3 flex items-center justify-between">
@@ -295,7 +295,7 @@ const ProjectModalContent: React.FC<ProjectModalProps & { project: Project }> = 
                 )}
               >
                 <FaGithub className="h-4 w-4" />
-                <span>GitHub Source</span>
+                <span>GitHub</span>
               </a>
             )}
             {project.demoUrl && (
@@ -306,7 +306,7 @@ const ProjectModalContent: React.FC<ProjectModalProps & { project: Project }> = 
                 className="flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-xs font-semibold text-white shadow-md transition-all hover:bg-blue-700"
               >
                 <ExternalLink className="h-4 w-4" />
-                <span>{language === "vi" ? "Mở Website Demo" : "Visit Live Site"}</span>
+                <span>{language === "vi" ? "Mở Demo" : "Open Demo"}</span>
               </a>
             )}
           </div>

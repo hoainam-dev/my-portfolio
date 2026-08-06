@@ -38,14 +38,11 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenProfileEditor,
   isOwner = false,
 }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-
       const sections = ["hero", "projects", "skills", "experience", "contact"];
       const scrollPosition = window.scrollY + 200;
 
@@ -87,11 +84,9 @@ export const Header: React.FC<HeaderProps> = ({
       id="main-header"
       className={cn(
         "fixed top-0 right-0 left-0 z-50 transition-all duration-300",
-        isScrolled
-          ? isDarkMode
-            ? "border-b border-slate-800 bg-slate-900/90 shadow-lg backdrop-blur-md"
-            : "border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur-md"
-          : "bg-transparent",
+        isDarkMode
+          ? "border-b border-slate-800 bg-slate-900/90 shadow-lg backdrop-blur-md"
+          : "border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur-md",
       )}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">

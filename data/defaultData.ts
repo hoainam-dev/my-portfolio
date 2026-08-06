@@ -12,8 +12,8 @@ export const vi_VN_initialProfileData: ProfileData = {
   location: "Đà Nẵng / TP. Hồ Chí Minh, Việt Nam",
   availableForWork: true,
   stats: {
-    completedProjects: 18,
-    yearsExperience: 4,
+    completedProjects: 10,
+    yearsExperience: 2,
     satisfiedClients: 25,
     codeCommits: 2450,
   },
@@ -38,13 +38,13 @@ export const en_US_initialProfileData: ProfileData = {
   location: "Da Nang / Ho Chi Minh City, Vietnam",
   availableForWork: true,
   stats: {
-    completedProjects: 18,
-    yearsExperience: 4,
+    completedProjects: 10,
+    yearsExperience: 2,
     satisfiedClients: 25,
     codeCommits: 2450,
   },
   socials: {
-    github: "https://github.com",
+    github: "https://github.com/hoainam-dev",
     linkedin: "https://linkedin.com",
     twitter: "https://x.com",
     zalo: "https://zalo.me",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { ArrowRight, Sparkles, Terminal, Mail } from "lucide-react";
+import { ArrowRight, Sparkles, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { ProfileData } from "@/types";
 import { cn } from "@/lib/utils";
@@ -230,12 +230,6 @@ export const Hero: React.FC<HeroProps> = ({ profile, isDarkMode, language, onOpe
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     priority
                   />
-                  <div className="absolute right-3 bottom-3 left-3 flex items-center justify-between rounded-xl border border-slate-700/50 bg-slate-900/80 p-3 text-white backdrop-blur-md">
-                    <div className="flex items-center gap-2">
-                      <Terminal className="h-4 w-4 text-emerald-400" />
-                      <span className="font-mono text-xs">Full-Stack</span>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Quick Info Box */}
@@ -247,7 +241,7 @@ export const Hero: React.FC<HeroProps> = ({ profile, isDarkMode, language, onOpe
                     )}
                   >
                     <span className={cn(isDarkMode ? "text-slate-400" : "text-slate-500")}>
-                      {language === "vi" ? "Vị trí" : "Location"}:
+                      {language === "vi" ? "Địa chỉ" : "Location"}:
                     </span>
                     <span
                       className={cn(
@@ -265,7 +259,7 @@ export const Hero: React.FC<HeroProps> = ({ profile, isDarkMode, language, onOpe
                     )}
                   >
                     <span className={cn(isDarkMode ? "text-slate-400" : "text-slate-500")}>
-                      {language === "vi" ? "Chuyên môn" : "Expertise"}:
+                      {language === "vi" ? "Vị trí" : "Position"}:
                     </span>
                     <span
                       className={cn(
@@ -273,7 +267,7 @@ export const Hero: React.FC<HeroProps> = ({ profile, isDarkMode, language, onOpe
                         isDarkMode ? "text-blue-400" : "text-blue-600",
                       )}
                     >
-                      React, TypeScript
+                      Full stack developer
                     </span>
                   </div>
                   <div className="flex items-center justify-between py-1">
