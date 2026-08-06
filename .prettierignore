@@ -1,0 +1,7 @@
+.next
+.agent
+out
+build
+node_modules
+package-lock.json
+

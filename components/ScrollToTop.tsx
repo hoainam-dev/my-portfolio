@@ -1,19 +1,22 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
-import { FaArrowUp } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { ArrowUp } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(false);
+interface ScrollToTopProps {
+  isDarkMode: boolean;
+  language: "vi" | "en";
+}
+
+export function ScrollToTop({ isDarkMode, language }: ScrollToTopProps) {
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 360);
-    };
-
-    window.addEventListener("scroll", toggleVisibility, { passive: true });
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    const onScroll = () => setVisible(window.scrollY > 320);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const scrollToTop = () => {
@@ -21,22 +24,22 @@ const ScrollToTop = () => {
   };
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.6, y: 12 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.6, y: 12 }}
-          onClick={scrollToTop}
-          data-cursor="hover"
-          className="fixed right-6 bottom-6 z-50 rounded-full border border-white/10 bg-slate-950/80 p-3.5 text-teal-300 shadow-lg shadow-black/40 backdrop-blur-md transition-colors hover:border-teal-400/30 hover:text-teal-200 md:right-8 md:bottom-8"
-          aria-label="Scroll to top"
-        >
-          <FaArrowUp size={16} />
-        </motion.button>
+    <button
+      type="button"
+      onClick={scrollToTop}
+      aria-label={language === "vi" ? "Cuộn lên đầu trang" : "Scroll to top"}
+      title={language === "vi" ? "Cuộn lên đầu trang" : "Scroll to top"}
+      className={cn(
+        "fixed right-5 bottom-5 z-40 flex h-11 w-11 items-center justify-center rounded-full border shadow-lg transition-all duration-300 sm:right-6 sm:bottom-6",
+        visible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none translate-y-3 opacity-0",
+        isDarkMode
+          ? "border-slate-700 bg-slate-800 text-slate-100 hover:bg-slate-700"
+          : "border-slate-200 bg-white text-slate-800 hover:bg-slate-50",
       )}
-    </AnimatePresence>
+    >
+      <ArrowUp className="h-4 w-4" />
+    </button>
   );
-};
-
-export default ScrollToTop;
+}

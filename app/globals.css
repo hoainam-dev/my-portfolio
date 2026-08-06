@@ -97,7 +97,10 @@ body::before {
   border-radius: 999px;
   background: #fff;
   will-change: transform;
-  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    background 0.25s ease;
 }
 
 .cursor-dot.is-hover {
@@ -201,8 +204,19 @@ body::before {
   z-index: -4;
   pointer-events: none;
   background:
-    radial-gradient(circle at center, transparent 0 40%, rgba(6, 8, 12, 0.7) 76%, rgba(6, 8, 12, 0.96) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 20%, transparent 80%, rgba(0, 0, 0, 0.28));
+    radial-gradient(
+      circle at center,
+      transparent 0 40%,
+      rgba(6, 8, 12, 0.7) 76%,
+      rgba(6, 8, 12, 0.96) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03),
+      transparent 20%,
+      transparent 80%,
+      rgba(0, 0, 0, 0.28)
+    );
 }
 
 .background-layers,
@@ -287,7 +301,12 @@ body::before {
 .depth-layer {
   z-index: -1;
   background:
-    radial-gradient(circle at 50% 8%, transparent 0 28rem, rgba(6, 8, 12, 0.2) 38rem, rgba(6, 8, 12, 0.88) 78rem),
+    radial-gradient(
+      circle at 50% 8%,
+      transparent 0 28rem,
+      rgba(6, 8, 12, 0.2) 38rem,
+      rgba(6, 8, 12, 0.88) 78rem
+    ),
     linear-gradient(180deg, transparent 0%, rgba(6, 8, 12, 0.5) 72%, #06080c 100%);
 }
 
@@ -329,9 +348,15 @@ body::before {
   animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.reveal-delay-1 { animation-delay: 0.08s; }
-.reveal-delay-2 { animation-delay: 0.16s; }
-.reveal-delay-3 { animation-delay: 0.24s; }
+.reveal-delay-1 {
+  animation-delay: 0.08s;
+}
+.reveal-delay-2 {
+  animation-delay: 0.16s;
+}
+.reveal-delay-3 {
+  animation-delay: 0.24s;
+}
 
 /* —— UI primitives —— */
 .glass-card {
@@ -345,7 +370,10 @@ body::before {
     0 24px 80px rgba(0, 0, 0, 0.32),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .glass-card::before {
@@ -400,7 +428,11 @@ body::before {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease, background 260ms ease;
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease;
 }
 
 .magnetic-button::after {
@@ -435,7 +467,9 @@ body::before {
   background: rgba(8, 12, 20, 0.65);
   color: #f8fafc;
   outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .field-input::placeholder {

@@ -40,13 +40,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="vi" className="scroll-pt-24">
       <body
-        className={`${outfit.variable} ${jakarta.variable} bg-background font-sans antialiased`}
+        className={`${outfit.variable} ${jakarta.variable} antialiased selection:bg-blue-500 selection:text-white`}
       >
         {children}
       </body>

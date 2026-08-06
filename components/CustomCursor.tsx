@@ -26,7 +26,7 @@ function useMediaQuery(query: string) {
   );
 }
 
-export default function CustomCursor() {
+export const CustomCursor: React.FC = () => {
   const finePointer = useMediaQuery("(pointer: fine)");
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const enabled = finePointer && !reducedMotion;
@@ -40,9 +40,7 @@ export default function CustomCursor() {
 
   const pos = useRef({ x: -100, y: -100 });
   const ringPos = useRef({ x: -100, y: -100 });
-  const trailPos = useRef(
-    Array.from({ length: TRAIL_COUNT }, () => ({ x: -100, y: -100 })),
-  );
+  const trailPos = useRef(Array.from({ length: TRAIL_COUNT }, () => ({ x: -100, y: -100 })));
   const raf = useRef<number | null>(null);
   const rippleId = useRef(0);
 
@@ -69,10 +67,7 @@ export default function CustomCursor() {
     const onDown = (e: MouseEvent) => {
       setMode("click");
       const id = ++rippleId.current;
-      setRipples((prev) => [
-        ...prev.slice(-4),
-        { id, x: e.clientX, y: e.clientY },
-      ]);
+      setRipples((prev) => [...prev.slice(-4), { id, x: e.clientX, y: e.clientY }]);
       window.setTimeout(() => {
         setRipples((prev) => prev.filter((r) => r.id !== id));
       }, 650);
@@ -148,21 +143,17 @@ export default function CustomCursor() {
 
       <div
         ref={ringRef}
-        className={`cursor-ring${mode === "hover" ? " is-hover" : ""}${mode === "click" ? " is-click" : ""}`}
+        className={`cursor-ring${mode === "hover" ? "is-hover" : ""}${mode === "click" ? "is-click" : ""}`}
       />
 
       <div
         ref={dotRef}
-        className={`cursor-dot${mode === "hover" ? " is-hover" : ""}${mode === "click" ? " is-click" : ""}`}
+        className={`cursor-dot${mode === "hover" ? "is-hover" : ""}${mode === "click" ? "is-click" : ""}`}
       />
 
       {ripples.map((ripple) => (
-        <span
-          key={ripple.id}
-          className="cursor-ripple"
-          style={{ left: ripple.x, top: ripple.y }}
-        />
+        <span key={ripple.id} className="cursor-ripple" style={{ left: ripple.x, top: ripple.y }} />
       ))}
     </div>
   );
-}
+};
