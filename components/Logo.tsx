@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 type LogoProps = {
   className?: string;
   showWordmark?: boolean;
-  size?: "sm" | "md";
+  size?: "sm" | "md" | "lg";
   variant?: "dark" | "light";
 };
 
@@ -15,7 +15,7 @@ export const Logo: React.FC<LogoProps> = ({
   size = "sm",
   variant = "dark",
 }) => {
-  const mark = size === "sm" ? 28 : 40;
+  const mark = size === "lg" ? 72 : size === "md" ? 40 : 28;
   const isLight = variant === "light";
   const gradId = isLight ? "logo-grad-light" : "logo-grad-dark";
   const innerId = isLight ? "logo-inner-light" : "logo-inner-dark";

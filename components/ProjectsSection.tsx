@@ -188,7 +188,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               {selectedTech && (
                 <button
                   onClick={() => setSelectedTech(null)}
-                  className="rounded-lg bg-red-500/10 px-2.5 py-1 text-xs font-semibold text-red-500 hover:bg-red-500/20"
+                  className="rounded-lg bg-red-500/10 px-2.5 py-1 text-xs font-semibold text-nowrap text-red-500 hover:bg-red-500/20"
                 >
                   {selectedTech} ✕
                 </button>
